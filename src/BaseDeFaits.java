@@ -35,7 +35,9 @@ public class BaseDeFaits {
 				Attr attribut = (Attr) attrs.item(0);
 				nomFait = attribut.getName();
 				valFait = attribut.getValue();
-				Fait ff = new Fait(nomFait, valFait);
+				Fait ff = new Fait();
+				ff.setNom(nomFait);
+				ff.setValeur(valFait);
 				f.add(ff);
 			}
 		}
@@ -59,5 +61,35 @@ public class BaseDeFaits {
 	
 	public ArrayList<Fait> getFaits() {
 		return this.faits;
+	}
+	
+	public void setFaits(BaseDeFaits bf) {
+		this.faits = bf.getFaits();
+	}
+	
+	// tester si le "fait" appartient à la base de faits
+	public boolean includes(Fait fait) {
+		for (int i = 0; i < this.faits.size(); i++) {
+			if (this.faits.get(i).equals(fait)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void union(Fait fait) {
+		if (!this.includes(fait)) {
+			this.faits.add(fait);
+		}
+	}
+	
+	// obtenir un fait par son nom et a valeur
+	public Fait getFait(String nom) {
+		for (Fait f : faits) {
+			if (f.getNom() == nom) {
+				return f;
+			}
+		}
+		return new Fait("","");
 	}
 }

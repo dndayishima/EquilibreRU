@@ -1,16 +1,19 @@
 
 public class Main {
 	public static void main(String args[]) {
-		BaseDeRegles b = new BaseDeRegles("./src/regles.xml");
-		BaseDeFaits faits = new BaseDeFaits("./src/faits.xml");
-		for (Regle r : b.getRegles()) {
-			r.afficheRegle();
-		}
-		System.out.println("==================");
+		BaseDeRegles baseRegles = new BaseDeRegles("./src/regles1.xml");
+		BaseDeFaits faits = new BaseDeFaits("./src/faits1.xml");
 		
-		System.out.println("BASE DE FAITS");
-		for (Fait f : faits.getFaits()) {
-			f.afficheFait();
+		Fait but = new Fait();
+		but.setNom("repas");
+		but.setValeur("true");
+		
+		Moteur2 moteur = new Moteur2(faits, baseRegles, but);
+		
+		if (moteur.chainageArriere(faits, baseRegles, but)) {
+			System.out.println("SUCCES");
+		} else {
+			System.out.println("ECHEC");
 		}
 	}
 }

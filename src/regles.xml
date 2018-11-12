@@ -8,22 +8,86 @@
 		<condition dessert="true" />
 		<conclusion repas="true" />
 	</regle>
+	
+	<!--ENTREE-->
 	<regle numero="2">
 		<condition legume="salade" />
 		<conclusion entree="true" />
 	</regle>
 	<regle numero="3">
+		<condition legume="carottes" />
+		<conclusion entree="true" />
+	</regle>
+	<regle numero="4">
+		<condition legume="concombre" />
+		<conclusion entree="true" />
+	</regle>
+	<regle numero="5">
+		<condition legume="tomates" />
+		<conclusion entree="true" />
+	</regle>
+	
+	<!--DESSERT-->
+	<regle numero="6">
 		<condition fruit="orange" />
 		<conclusion dessert="true" />
 	</regle>
-	<regle numero="4">
-		<condition fruit="banane" />
+	<regle numero="7">
+		<condition fruit="ananas" />
 		<conclusion dessert="true" />
 	</regle>
-	<regle numero="5">
+	<regle numero="8">
+		<condition fruit="kiwi" />
+		<conclusion dessert="true" />
+	</regle>
+	<regle numero="9">
+		<condition fruit="pomme" />
+		<conclusion dessert="true" />
+	</regle>
+	<regle numero="10">
+		<condition glace="true" />
+		<conclusion dessert="true" />
+	</regle>
+	<regle numero="11">
+		<condition yaourt="banane" />
+		<conclusion dessert="true" />
+	</regle>
+	
+	<!--PLAT-->
+	<regle numero="12">
 		<condition feculent="riz" />
 		<condition viande="poulet" />
 		<condition legume="petit pois" />
+		<conclusion plat="true" />
+	</regle>
+	<regle numero="13">
+		<condition feculent="couscous" />
+		<condition viande="poulet" />
+		<condition legume="courgettes" />
+		<conclusion plat="true" />
+	</regle>
+	<regle numero="14">
+		<condition feculent="pates" />
+		<condition viande="viande hachée" />
+		<condition legume="concombre" />
+		<conclusion plat="true" />
+	</regle>
+	<regle numero="15">
+		<condition feculent="riz" />
+		<condition viande="steak haché" />
+		<condition legume="petit pois" />
+		<conclusion plat="true" />
+	</regle>
+	<regle numero="16">
+		<condition feculent="riz" />
+		<condition viande="steak haché" />
+		<condition legume="haricots verts" />
+		<conclusion plat="true" />
+	</regle>
+	<regle numero="17">
+		<condition feculent="pates" />
+		<condition viande="lardons" />
+		<condition legume="oignons" />
 		<conclusion plat="true" />
 	</regle>
 </regles>

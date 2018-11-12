@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faits>
-	<fait legume="salade"/>
+	<fait legume="petit pois"/>
 	<fait viande="poulet"/>
 	<fait fruit="banane"/>
-	<fait feculent="pates"/>
+	<fait feculent="riz"/>
+	<fait legume="salade"/>
 </faits>
