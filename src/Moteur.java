@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Moteur {
-	private BaseDeFaits BF;
-	private BaseDeRegles BR;
-	private Fait F;
+	private BaseDeFaits bf;
+	private BaseDeRegles br;
+	private Fait but;
 	
 	public Moteur(BaseDeFaits BF, BaseDeRegles BR, Fait F) {
-		this.BF = BF;
-		this.BR = BR;
-		this.F = F;
+		this.bf = BF;
+		this.br = BR;
+		this.but = F;
 	}
 	
 	/**
@@ -18,13 +18,13 @@ public class Moteur {
 	public boolean chainage_avant() {
 		Regle regle_applicable;
 		
-		while(!appartient_a_la_base_de_fait(this.F,this.BF) && regle_applicable(this.BR,this.BF)!=null) {
-			regle_applicable = regle_applicable(this.BR,this.BF);
-			desactivation_regle(regle_applicable,this.BR);
-			ajout_de_la_conclusion(regle_applicable,this.BF);
+		while(!appartient_a_la_base_de_fait(this.but,this.bf) && regle_applicable(this.br,this.bf)!=null) {
+			regle_applicable = regle_applicable(this.br,this.bf);
+			desactivation_regle(regle_applicable,this.br);
+			ajout_de_la_conclusion(regle_applicable,this.bf);
 		}
 		
-		return (appartient_a_la_base_de_fait(this.F,this.BF));
+		return (appartient_a_la_base_de_fait(this.but,this.bf));
 	}
 	
 	/**
@@ -129,7 +129,7 @@ public class Moteur {
 	 * @param BR
 	 */
 	public void desactivation_regle(Regle r,BaseDeRegles BR) {
-		if(non_doublons_de_la_base_de_fait(BF)) {
+		if(non_doublons_de_la_base_de_fait(bf)) {
 			for(int i = 0; i < BR.getRegles().size(); i++) {
 				Regle rr = BR.getRegles().get(i);
 				
@@ -148,5 +148,71 @@ public class Moteur {
 		Fait nouveau_fait = new Fait(regle.getConclusion().getNom(),regle.getConclusion().getValeur());
 		
 		BF.getFaits().add(nouveau_fait);
-	}	
+	}
+	
+	public boolean chainageArriere(BaseDeFaits bf, BaseDeRegles br, Fait but) {
+
+		ArrayList<Regle> ER = new ArrayList<Regle>();
+		
+		if (bf.includes(but)) {
+			System.out.println("Le but est dans la base de faits");
+			return true;
+		} else {
+			Conclusion ccl = new Conclusion();
+			ccl.setNom(but.getNom());
+			ccl.setValeur(but.getValeur());
+			ER = br.hasConclusion(ccl);
+			Moteur.displayReglesNum(ER);
+		}
+		if (ER.size() == 0) {
+			System.out.println("vide");
+			return false;
+		}
+		boolean valide = false;
+		while (!valide && ER.size() != 0) {
+			System.out.println("while");
+			valide = true;
+			Regle r = this.getFirstRegle(ER); // 1er element de ER
+			ER = this.removeRegle(ER, r.getNumero());
+			for (Condition c : r.getConditions()) {
+				Fait f2 = new Fait();
+				f2.setNom(c.getNom());
+				f2.setValeur(c.getValeur());
+				valide = valide && this.chainageArriere(bf, br, f2);
+			}
+		}
+			
+		if (valide) {
+			BaseDeFaits newBf = bf;
+			newBf.union(but);
+			this.bf.setFaits(newBf);
+		}
+		return valide;
+		
+	}
+	
+	
+	public ArrayList<Regle> removeRegle(ArrayList<Regle> regles, int numero) {
+		ArrayList<Regle> resultat = new ArrayList<Regle>();
+		for (Regle r : regles) {
+			if (r.getNumero() != numero) {
+				resultat.add(r);
+			}
+		}
+		return resultat;
+	}
+	
+	public Regle getFirstRegle(ArrayList<Regle> regles) {
+		if (regles.size() > 0) {
+			return regles.get(0);
+		}
+		return null;
+	}
+	
+	public static void displayReglesNum(ArrayList<Regle> regles) {
+		for (Regle r : regles) {
+			System.out.print(r.getNumero() + ", ");
+		}
+		System.out.println("");
+	}
 }
