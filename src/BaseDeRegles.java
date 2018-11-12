@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -101,6 +102,5 @@ public class BaseDeRegles {
 	
 	public ArrayList<Regle> getRegles() {
 		return this.regles;
-	}
-
+	}	
 }

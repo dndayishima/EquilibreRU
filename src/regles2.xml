@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regles>
+	<!-- Séparer les règles pour plus de lisibilité -->
+	
+	<regle numero="1">
+		<condition personne1="benoit" />
+		<condition personne3="djamel" />
+		<condition personne4="emma" />
+		<conclusion personne5="felix" />
+	</regle>
+
+	<regle numero="2">
+		<condition personne6="gaelle" />
+		<condition personne3="djamel" />
+		<conclusion personne7="amandine" />
+	</regle>
+
+	<regle numero="3">
+		<condition personne2="cloe" />
+		<condition personne5="felix" />
+		<conclusion personne7="amandine" />
+	</regle>
+
+	<regle numero="4">
+		<condition personne1="benoit" />
+		<conclusion personne8="xena" />
+	</regle>
+
+	<regle numero="5">
+		<condition personne3="djamel" />
+		<conclusion personne4="emma" />
+	</regle>
+
+	<regle numero="6">
+		<condition personne8="xena" />
+		<condition personne7="amandine" />
+		<conclusion personne9="habiba" />
+	</regle>
+
+	<regle numero="7">
+		<condition personne2="cloe" />
+		<conclusion personne3="djamel" />
+	</regle>
+
+	<regle numero="8">
+		<condition personne8="xena" />
+		<condition personne2="cloe" />
+		<conclusion personne7="amandine" />
+	</regle>
+
+	<regle numero="9">
+		<condition personne8="xena" />
+		<condition personne1="benoit" />
+		<conclusion personne3="djamel" />
+	</regle>
+
+</regles>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regles>
+	<!-- Séparer les règles pour plus de lisibilité -->
+	
+	<regle numero="1">
+		<condition entree="true" />
+		<condition plat="true" />
+		<condition dessert="true" />
+		<conclusion repas="true" />
+	</regle>
+	<regle numero="2">
+		<condition legume="salade" />
+		<conclusion entree="true" />
+	</regle>
+	<regle numero="3">
+		<condition fruit="orange" />
+		<conclusion dessert="true" />
+	</regle>
+	<regle numero="4">
+		<condition fruit="banane" />
+		<conclusion dessert="true" />
+	</regle>
+	<regle numero="5">
+		<condition feculent="riz" />
+		<condition viande="poulet" />
+		<condition legume="petit pois" />
+		<conclusion plat="true" />
+	</regle>
+</regles>

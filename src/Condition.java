@@ -18,4 +18,8 @@ public class Condition {
 	public void afficheCondition() {
 		System.out.println("\tCONDITION " + this.nom + " = " + this.valeur);
 	}
+	
+	public boolean equals(Fait fait) {
+		return (this.nom.equals(fait.getNom()) && this.valeur.equals(fait.getValeur()));
+	}
 }

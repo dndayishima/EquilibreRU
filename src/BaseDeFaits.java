@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -11,10 +12,19 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/**
+ * Cette classe permet de représenter une base de fait
+ * 
+ * @author Divin et Mateanui
+ */
 
 public class BaseDeFaits {
 	private ArrayList<Fait> faits;
 	
+	/**
+	 * le constructeur nous permet de lire un fichier xml où l'on stock nos faits
+	 * @param filename
+	 */
 	public BaseDeFaits(String filename) {
 		File xmlFile = new File(filename);
 		Document xmlDoc = this.getDocument(xmlFile);
@@ -35,7 +45,8 @@ public class BaseDeFaits {
 				Attr attribut = (Attr) attrs.item(0);
 				nomFait = attribut.getName();
 				valFait = attribut.getValue();
-				Fait ff = new Fait(nomFait, valFait);
+				
+				Fait ff = new Fait(nomFait,valFait);
 				f.add(ff);
 			}
 		}
@@ -43,6 +54,11 @@ public class BaseDeFaits {
 		this.faits = f;
 	}
 	
+	/**
+	 * permet de traduire notre fichier xml en un document
+	 * @param xmlFile
+	 * @return Document
+	 */
 	public Document getDocument(File xmlFile) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -56,6 +72,8 @@ public class BaseDeFaits {
 		}
 		return null;
 	}
+	
+	/* Getteurs et setteurs */
 	
 	public ArrayList<Fait> getFaits() {
 		return this.faits;

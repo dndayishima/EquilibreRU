@@ -15,7 +15,19 @@ public class Fait {
 		return this.valeur;
 	}
 	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setValeur(String valeur) {
+		this.valeur = valeur;
+	}
+	
 	public void afficheFait() {
 		System.out.println("FAIT -> " + this.nom + " = " + this.valeur);
+	}
+	
+	public boolean equals(Fait fait) {
+		return (this.nom.equals(fait.getNom()) && this.valeur.equals(fait.getValeur()));
 	}
 }
