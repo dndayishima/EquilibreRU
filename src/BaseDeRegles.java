@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -105,9 +104,6 @@ public class BaseDeRegles {
 	
 	public ArrayList<Regle> getRegles() {
 		return this.regles;
-<<<<<<< HEAD
-	}	
-=======
 	}
 	
 	// construire ER ensemble de règles R, telle que F appartient conclusion(R)
@@ -132,5 +128,4 @@ public class BaseDeRegles {
 		return resultat;
 	}
 
->>>>>>> chainage_arriere
 }

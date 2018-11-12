@@ -23,14 +23,8 @@ public class Fait {
 	public String getValeur() {
 		return this.valeur;
 	}
+
 	
-<<<<<<< HEAD
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	
-=======
->>>>>>> chainage_arriere
 	public void setValeur(String valeur) {
 		this.valeur = valeur;
 	}
@@ -39,13 +33,8 @@ public class Fait {
 		System.out.println("FAIT -> " + this.nom + " = " + this.valeur);
 	}
 	
-<<<<<<< HEAD
-	public boolean equals(Fait fait) {
-		return (this.nom.equals(fait.getNom()) && this.valeur.equals(fait.getValeur()));
-=======
 	// tester si this est égal au fait f
 	public boolean equals(Fait f) {
 		return (this.nom.equals(f.getNom()) && this.valeur.equals(f.getValeur()));
->>>>>>> chainage_arriere
 	}
 }
