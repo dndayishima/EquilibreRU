@@ -21,10 +21,17 @@
 		<conclusion personne7="amandine" />
 	</regle>
 
+<<<<<<< HEAD
 	<regle numero="4">
 		<condition personne1="benoit" />
 		<conclusion personne8="xena" />
 	</regle>
+=======
+	<!--<regle numero="4">
+		<condition personne1="benoit" />
+		<conclusion personne8="xena" />
+	</regle>-->
+>>>>>>> chainage_arriere
 
 	<regle numero="5">
 		<condition personne3="djamel" />

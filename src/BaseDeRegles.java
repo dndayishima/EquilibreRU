@@ -29,7 +29,7 @@ public class BaseDeRegles {
 		
 		for (int i = 0; i < regles.getLength(); i++) {
 			ArrayList<Condition> c = new ArrayList<Condition>();
-			Conclusion ccl = new Conclusion("","");
+			Conclusion ccl = new Conclusion();
 			
 			Node noeud = (Node) regles.item(i);
 			Element regle = (Element) noeud;
@@ -52,7 +52,10 @@ public class BaseDeRegles {
 					Attr attribut = (Attr) attrs.item(0);
 					nomCondition = attribut.getName();
 					valCondition = attribut.getValue();
-					Condition cond = new Condition(nomCondition, valCondition);
+					Condition cond = new Condition();
+					cond.setNom(nomCondition);
+					cond.setValeur(valCondition);
+					//Condition cond = new Condition(nomCondition, valCondition);
 					c.add(cond);
 				}
 			}
@@ -102,5 +105,32 @@ public class BaseDeRegles {
 	
 	public ArrayList<Regle> getRegles() {
 		return this.regles;
+<<<<<<< HEAD
 	}	
+=======
+	}
+	
+	// construire ER ensemble de règles R, telle que F appartient conclusion(R)
+	public ArrayList<Regle> hasConclusion(Conclusion ccl) {
+		ArrayList<Regle> resultat = new ArrayList<Regle>();
+		for (int i = 0 ; i < this.regles.size() ; i++) {
+			if (this.regles.get(i).getConclusion().equals(ccl)) {
+				resultat.add(this.regles.get(i));
+			}
+		}
+		return resultat;
+	}
+	
+	// enlever une règle de numéro "numero"
+	public ArrayList<Regle> removeRegle(int numero) {
+		ArrayList<Regle> resultat = new ArrayList<Regle>();
+		for (Regle r : regles) {
+			if (r.getNumero() != numero) {
+				resultat.add(r);
+			}
+		}
+		return resultat;
+	}
+
+>>>>>>> chainage_arriere
 }
