@@ -26,6 +26,7 @@ public class ViewRegles extends JPanel{
 		this.add(regles, BorderLayout.CENTER);
 		
 		this.setBackground(Color.white);
+		//this.setBorder(new EmptyBorder(10,10,10,5));
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 	
