@@ -15,6 +15,7 @@ public class Moteur {
 		this.br = BR;
 		this.but = F;
 		this.viewTrace = v.getPanelTrace();
+		viewTrace.setTrace(new ArrayList<String>());
 	}
 	
 	/**
@@ -47,6 +48,7 @@ public class Moteur {
 			regle = BR.getRegles().get(i);
 			
 			if(ensemble_condition_appartient_a_base_de_fait(regle.getConditions(), BF)) {
+				viewTrace.addToTrace("Regle " + regle.getNumero() + " applicable");
 				return regle; //Dès que la première règle est trouvé, on la return (parcours en profondeur)
 			}
 		}
@@ -122,10 +124,14 @@ public class Moteur {
 	 */
 	public boolean appartient_a_la_base_de_fait(Fait F,BaseDeFaits BF) {
 		for(int i = 0; i < BF.getFaits().size(); i++) {
-			if(BF.getFaits().get(i).equals(F))
+			if(BF.getFaits().get(i).equals(F)) {
+				viewTrace.addToTrace("Fait \"" + BF.getFaits().get(i).getNom() + " = " + BF.getFaits().get(i).getValeur() + "\" existe dans la BF");
 				return true;
+			}
+			
 		}
 		
+		viewTrace.addToTrace("Le fait n'existe pas dans la BF");
 		return false;
 	}
 	

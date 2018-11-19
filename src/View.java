@@ -17,7 +17,6 @@ public class View extends JFrame{
 	private FilesChooser panelFilesChooser;
 	private NewBut panelNewBut;
 	private Resultat panelResultat;
-	private JPanel contenuTextuel;
 	
 	private BaseDeRegles br;
 	private BaseDeFaits bf;
