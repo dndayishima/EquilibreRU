@@ -40,7 +40,7 @@ public class View extends JFrame{
 	
 	public void afficher() {
 		this.setTitle("SYSTEME EXPERT");
-		this.setSize(900, 700);
+		this.setSize(1200, 900);
 		this.setLocationRelativeTo(null); //positionne la fenetre au centre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //quitte l'application correctement
 		//this.setResizable(false);
