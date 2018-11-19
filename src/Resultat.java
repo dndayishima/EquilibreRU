@@ -3,6 +3,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * représente le JPanle résultat de la fenetre
+ */
 
 public class Resultat extends JPanel {
 	

@@ -1,3 +1,6 @@
+/**
+ * Représente la conclusion d'un règle contenant un nom et une valeur
+ */
 
 public class Conclusion {
 	private String nom, valeur;

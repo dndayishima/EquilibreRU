@@ -1,3 +1,6 @@
+/**
+ * permet de représenter un fait avec un nom et une valeur
+ */
 
 public class Fait {
 	private String nom, valeur;

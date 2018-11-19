@@ -12,9 +12,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Cette classe crée la base de règles à partir d'un fichier XML 
+ * Permet de lire les fichers regles*.xml
  */
-public class BaseDeRegles {
+
+public class BaseDeRegles{
 	private ArrayList<Regle> regles;
 	
 	public BaseDeRegles(String filename) {
@@ -127,5 +128,4 @@ public class BaseDeRegles {
 		}
 		return resultat;
 	}
-
 }

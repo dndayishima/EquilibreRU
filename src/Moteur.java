@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * représente le moteur permettant d'appliquer le chainage avant et arrière
+ */
+
 public class Moteur {
 	private BaseDeFaits bf;
 	private BaseDeRegles br;

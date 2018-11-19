@@ -7,10 +7,11 @@ public class Main {
 		// AFFICHAGE
 		View v = new View();
 		v.setBaseDeRegles(baseRegles);
+		v.setBaseDeFaits(faits);
 		v.afficher();
 		
 		// FIN TEST AFFICHAGE
-		
+		/*
 		Fait but = new Fait();
 		but.setNom("repas");
 		but.setValeur("true");
@@ -29,6 +30,6 @@ public class Main {
 		if(m.chainage_avant())
 			System.out.println("\nC'EST OK POUR LE CHAINAGE AVANT");
 		else
-			System.out.println("\n ECHEC CHAINAGE AVANT");
+			System.out.println("\n ECHEC CHAINAGE AVANT");*/
 	}
 }

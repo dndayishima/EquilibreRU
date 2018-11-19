@@ -1,3 +1,6 @@
+/**
+ * Représente toutes les conditions d'une règles
+ */
 
 public class Condition {
 	private String nom, valeur;

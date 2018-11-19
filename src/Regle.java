@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * permet de repréenter une règle avec un nom et une valeur
+ */
 
 public class Regle {
 	

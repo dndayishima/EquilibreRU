@@ -7,18 +7,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * représente la vue de la base de règles
+ */
 
 public class ViewRegles extends JPanel{
+	private JLabel titre, regles;
 	
-	public ViewRegles(BaseDeRegles br) {
-
+	public ViewRegles(BaseDeRegles br) {		
 		this.setLayout(new BorderLayout());
 		
-		JLabel titre = new JLabel("REGLES (" + br.getRegles().size() + ")");
+		titre = new JLabel("REGLES (" + br.getRegles().size() + ")");
 		titre.setBorder(new EmptyBorder(10,0,0,0));
 		titre.setHorizontalAlignment(JLabel.CENTER);
 		
-		JLabel regles = new JLabel(this.lectureRegles(br));
+		regles = new JLabel(this.lectureRegles(br));
 		regles.setBorder(new EmptyBorder(0,10,0,0));//top,left,bottom,right //utilisé pour le padding
 		regles.setVerticalAlignment(JLabel.TOP);
 		
@@ -50,5 +53,10 @@ public class ViewRegles extends JPanel{
 			}
 		}
 		return result;
+	}
+	
+	public void update(BaseDeRegles br) {
+		titre.setText("REGLES (" + br.getRegles().size() + ")");
+		regles.setText(this.lectureRegles(br));
 	}
 }

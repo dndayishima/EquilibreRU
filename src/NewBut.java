@@ -5,6 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * Ajout un but
+ */
 
 public class NewBut extends JPanel {
 	

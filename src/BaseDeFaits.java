@@ -11,6 +11,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/**
+ * Permet de lire les fichers faits*.xml 
+ */
 
 public class BaseDeFaits {
 	private ArrayList<Fait> faits;
@@ -91,5 +94,9 @@ public class BaseDeFaits {
 			}
 		}
 		return new Fait("","");
+	}
+	
+	public void add(Fait fait) {
+		faits.add(fait);
 	}
 }
