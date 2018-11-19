@@ -60,13 +60,13 @@ public class View extends JFrame{
 		contenuTextuel.add(this.panelTrace);
 		
 		JPanel options = new JPanel();
-		options.setLayout(new GridLayout(4,0));
+		options.setLayout(new GridLayout(3,0));
 		
 		this.panelNewFait = new NewFait(this,bf);
 		this.panelFilesChooser = new FilesChooser(this);
 		this.panelNewBut = new NewBut(this);
 		this.panelResultat = new Resultat(this);
-		options.add(this.panelNewFait);
+		//options.add(this.panelNewFait);
 		options.add(this.panelFilesChooser);
 		options.add(this.panelNewBut);
 		options.add(this.panelResultat);
