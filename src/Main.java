@@ -7,6 +7,7 @@ public class Main {
 		// AFFICHAGE
 		View v = new View();
 		v.setBaseDeRegles(baseRegles);
+		v.setBaseDeFaits(faits);
 		v.afficher();
 		
 		// FIN TEST AFFICHAGE

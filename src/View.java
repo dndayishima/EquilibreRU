@@ -13,7 +13,7 @@ public class View extends JFrame{
 	private JPanel panelNewFait;
 	private JPanel panelFilesChooser;
 	private JPanel panelNewBut;
-	private JPanel panelResultat;
+	private Resultat panelResultat;
 	
 	private BaseDeRegles br;
 	private BaseDeFaits bf;
@@ -60,5 +60,17 @@ public class View extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setVisible(true);
+	}
+	
+	public Resultat getPanelResultat() {
+		return this.panelResultat;
+	}
+	
+	public BaseDeRegles getBaseDeRegles() {
+		return this.br;
+	}
+	
+	public BaseDeFaits getBaseDeFaits() {
+		return this.bf;
 	}
 }
