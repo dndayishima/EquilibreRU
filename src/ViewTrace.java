@@ -38,7 +38,10 @@ public class ViewTrace extends JPanel {
 	}
 	
 	public void addToTrace(String str) {
-		this.trace.add(str);
+		ArrayList<String> t = this.trace;
+		t.add(str);
+				
+		this.trace = t;
 		for (String s : this.trace) {
 			textArea.append(s + "\n");
 		}

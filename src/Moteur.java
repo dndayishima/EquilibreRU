@@ -128,7 +128,6 @@ public class Moteur {
 				viewTrace.addToTrace("Fait \"" + BF.getFaits().get(i).getNom() + " = " + BF.getFaits().get(i).getValeur() + "\" existe dans la BF");
 				return true;
 			}
-			
 		}
 		
 		viewTrace.addToTrace("Le fait n'existe pas dans la BF");
@@ -172,23 +171,28 @@ public class Moteur {
 			return true;
 		} else {
 			viewTrace.addToTrace("Fait " + but.getNom() + " = " + but.getValeur() + " n'existe pas dans BF");
+			viewTrace.addToTrace("Contruction d'un tableau ER de règles\n" + "ayant comme conclusion " + but.getNom() + " = " + but.getValeur());
 			Conclusion ccl = new Conclusion();
 			ccl.setNom(but.getNom());
 			ccl.setValeur(but.getValeur());
 			ER = br.hasConclusion(ccl);
-			Moteur.displayReglesNum(ER);
+			this.displayReglesNum(ER);
 		}
 		if (ER.size() == 0) {
+			viewTrace.addToTrace("Le tableau ER est vide");
 			System.out.println("vide");
 			return false;
 		}
 		boolean valide = false;
 		while (!valide && ER.size() != 0) {
+			viewTrace.addToTrace("Pas de succès du chaînage arrière\n et ER n'est pas vide !");
 			System.out.println("while");
 			valide = true;
 			Regle r = this.getFirstRegle(ER); // 1er element de ER
+			viewTrace.addToTrace("On récupère la 1ère règle dans ER. Règle n°" + r.getNumero() + "\n" + "et on l'enlève de ER");
 			ER = this.removeRegle(ER, r.getNumero());
 			for (Condition c : r.getConditions()) {
+				viewTrace.addToTrace("On refait le chaînage arrière sur\n les conclusions de la Règle n°" + r.getNumero());
 				Fait f2 = new Fait();
 				f2.setNom(c.getNom());
 				f2.setValeur(c.getValeur());
@@ -223,10 +227,14 @@ public class Moteur {
 		return null;
 	}
 	
-	public static void displayReglesNum(ArrayList<Regle> regles) {
+	public void displayReglesNum(ArrayList<Regle> regles) {
+		viewTrace.addToTrace("Tableau ER contient les règles : ");
+		String str = "";
 		for (Regle r : regles) {
+			str = str + " " + r.getNumero();
 			System.out.print(r.getNumero() + ", ");
 		}
+		viewTrace.addToTrace(str);
 		System.out.println("");
 	}
 	
