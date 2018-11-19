@@ -16,20 +16,5 @@ public class Main {
 		but.setNom("repas");
 		but.setValeur("true");
 		
-		Moteur moteur = new Moteur(faits, baseRegles, but);
-		
-		if (moteur.chainageArriere(faits, baseRegles, but)) {
-			System.out.println("SUCCES");
-		} else {
-			System.out.println("ECHEC");
-		}
-		System.out.println("==================");
-						
-		Moteur m = new Moteur(faits, baseRegles, but);
-		
-		if(m.chainage_avant())
-			System.out.println("\nC'EST OK POUR LE CHAINAGE AVANT");
-		else
-			System.out.println("\n ECHEC CHAINAGE AVANT");
 	}
 }

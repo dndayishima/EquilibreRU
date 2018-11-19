@@ -1,6 +1,7 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -76,12 +77,18 @@ public class NewBut extends JPanel {
 	
 	
 	public boolean chainage_avant(BaseDeFaits bf, BaseDeRegles br, Fait but) {
-		Moteur moteur = new Moteur(bf, br, but);
+		Moteur moteur = new Moteur(bf, br, but, view);
+		moteur.getViewTrace().setTrace(new ArrayList<String>());
+		moteur.getViewTrace().addToTrace("Chaînage avant");
+		moteur.getViewTrace().addToTrace("============");
 		return (moteur.chainage_avant());
 	}
 	
 	public boolean chainage_arriere(BaseDeFaits bf, BaseDeRegles br, Fait but) {
-		Moteur moteur = new Moteur(bf, br, but);
+		Moteur moteur = new Moteur(bf, br, but, view);
+		moteur.getViewTrace().setTrace(new ArrayList<String>());
+		moteur.getViewTrace().addToTrace("Chaînage arriere");
+		moteur.getViewTrace().addToTrace("===========");
 		return (moteur.chainageArriere(bf, br, but));
 	}
 }
