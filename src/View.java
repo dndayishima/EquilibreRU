@@ -12,6 +12,7 @@ public class View extends JFrame{
 	
 	private ViewRegles panelRegles;
 	private ViewFaits panelFaits;
+	private ViewTrace panelTrace;
 	private NewFait panelNewFait;
 	private FilesChooser panelFilesChooser;
 	private NewBut panelNewBut;
@@ -46,13 +47,17 @@ public class View extends JFrame{
 		
 		this.setLayout(new BorderLayout());
 		
-		contenuTextuel = new JPanel();
-		contenuTextuel.setLayout(new GridLayout(0,2));
+		JPanel contenuTextuel = new JPanel();
+		contenuTextuel.setLayout(new GridLayout(0,3));
+		
 		this.panelRegles = new ViewRegles(this.br);
 		contenuTextuel.add(this.panelRegles);
 		
 		this.panelFaits = new ViewFaits(this.bf);
 		contenuTextuel.add(this.panelFaits);
+		
+		this.panelTrace = new ViewTrace();
+		contenuTextuel.add(this.panelTrace);
 		
 		JPanel options = new JPanel();
 		options.setLayout(new GridLayout(4,0));
@@ -70,5 +75,21 @@ public class View extends JFrame{
 		this.add(options, BorderLayout.SOUTH);
 		
 		this.setVisible(true);
+	}
+	
+	public Resultat getPanelResultat() {
+		return this.panelResultat;
+	}
+	
+	public BaseDeRegles getBaseDeRegles() {
+		return this.br;
+	}
+	
+	public BaseDeFaits getBaseDeFaits() {
+		return this.bf;
+	}
+	
+	public ViewTrace getPanelTrace() {
+		return this.panelTrace;
 	}
 }

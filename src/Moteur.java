@@ -8,11 +8,13 @@ public class Moteur {
 	private BaseDeFaits bf;
 	private BaseDeRegles br;
 	private Fait but;
+	private ViewTrace viewTrace;
 	
-	public Moteur(BaseDeFaits BF, BaseDeRegles BR, Fait F) {
+	public Moteur(BaseDeFaits BF, BaseDeRegles BR, Fait F, View v) {
 		this.bf = BF;
 		this.br = BR;
 		this.but = F;
+		this.viewTrace = v.getPanelTrace();
 	}
 	
 	/**
@@ -155,13 +157,15 @@ public class Moteur {
 	}
 	
 	public boolean chainageArriere(BaseDeFaits bf, BaseDeRegles br, Fait but) {
-
+		
 		ArrayList<Regle> ER = new ArrayList<Regle>();
 		
 		if (bf.includes(but)) {
+			viewTrace.addToTrace("Fait " + but.getNom() + " = " + but.getValeur() + " existe dans BF");
 			System.out.println("Le but est dans la base de faits");
 			return true;
 		} else {
+			viewTrace.addToTrace("Fait " + but.getNom() + " = " + but.getValeur() + " n'existe pas dans BF");
 			Conclusion ccl = new Conclusion();
 			ccl.setNom(but.getNom());
 			ccl.setValeur(but.getValeur());
@@ -218,5 +222,9 @@ public class Moteur {
 			System.out.print(r.getNumero() + ", ");
 		}
 		System.out.println("");
+	}
+	
+	public ViewTrace getViewTrace() {
+		return this.viewTrace;
 	}
 }
